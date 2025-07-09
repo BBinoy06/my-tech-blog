@@ -48,6 +48,12 @@ h1 {
   letter-spacing: 2px;
 }
 
+h2 {
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
 /* Tracker Section */
 .tracker-box {
   background-color: #f0edcb;
