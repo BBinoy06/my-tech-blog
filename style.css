@@ -1,13 +1,39 @@
 body {
-    background-color: #fffde7;
-    text-align: center;
-    font-family: "Sour Gummy", sans-serif;
-    display: grid;
-    grid-template-columns: auto 1fr;
+  margin: 0;
+  background-color: #fffde7;
+  font-family: "Sour Gummy", sans-serif;
+  display: grid;
+  grid-template-columns: 200px 1fr; /* sidebar + main content */
+  min-height: 100vh;
+}
+
+#sidebar {
+  background-color: #f0edcb;
+  padding: 20px;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar li {
+  margin: 20px 0;
+}
+
+#sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+main {
+  padding: 40px;
+  text-align: center;
 }
 
 h1 {
-    font-weight: 200;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
