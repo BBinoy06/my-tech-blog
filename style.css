@@ -2,6 +2,8 @@ body {
     background-color: #fffde7;
     text-align: center;
     font-family: "Sour Gummy", sans-serif;
+    display: grid;
+    grid-template-columns: auto 1fr;
 }
 
 h1 {
