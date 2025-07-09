@@ -17,7 +17,7 @@
 
 <body>
   <div class="container">
-    
+
     <!-- Sidebar -->
     <nav id="sidebar">
       <ul>
@@ -27,7 +27,7 @@
       </ul>
     </nav>
 
- <!-- Main content -->
+    <!-- Main content -->
     <main>
       <h1>My Tech Journey</h1>
       <h2>
@@ -41,42 +41,42 @@
         <!-- 🟠 Videos -->
         <div class="tracker-category">
           <h3>Videos</h3>
-          <div class="circle-container">
-            <!-- Add 30 circles manually or with JavaScript -->
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <!-- ... repeat until 30 -->
-          </div>
+          <div class="circle-container" id="videos-tracker"></div>
         </div>
 
         <!-- 🔵 Concepts -->
         <div class="tracker-category">
           <h3>Concepts</h3>
-          <div class="circle-container">
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <!-- ... -->
-          </div>
+          <div class="circle-container" id="concepts-tracker"></div>
         </div>
 
         <!-- 🟢 Projects -->
         <div class="tracker-category">
           <h3>Projects</h3>
-          <div class="circle-container">
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <div class="circle" onclick="toggleCircle(this)"></div>
-            <!-- ... -->
-          </div>
+          <div class="circle-container" id="projects-tracker"></div>
         </div>
-
       </section>
     </main>
-
-
   </div>
+
+  <!-- ✅ JavaScript to generate 30 circles and toggle fill -->
+  <script>
+    function createCircles(containerId, count = 30) {
+      const container = document.getElementById(containerId);
+      for (let i = 0; i < count; i++) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+        circle.addEventListener('click', () => {
+          circle.classList.toggle('filled');
+        });
+        container.appendChild(circle);
+      }
+    }
+
+    createCircles('videos-tracker');
+    createCircles('concepts-tracker');
+    createCircles('projects-tracker');
+  </script>
 </body>
 
 </html>
