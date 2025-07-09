@@ -50,7 +50,8 @@ h1 {
 
 /* Tracker Section */
 .tracker-box {
-  background-color: #ffffff;
+  background-color: #f0edcb;
+  border: 2px solid #000000;
   padding: 30px;
   margin: 40px auto;
   max-width: 700px;
