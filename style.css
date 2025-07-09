@@ -2,3 +2,9 @@ body {
     background: color #fffde7;
     text-align: center;
 }
+h1 {
+      font-family: "Sour Gummy", sans-serif;
+      font-weight: 200;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
