@@ -59,24 +59,46 @@
     </main>
   </div>
 
-  <!-- ✅ JavaScript to generate 30 circles and toggle fill -->
   <script>
-    function createCircles(containerId, count = 30) {
+    const trackers = ['videos-tracker', 'concepts-tracker', 'projects-tracker'];
+    const CIRCLES_COUNT = 30;
+
+    // Save an array of booleans to localStorage
+    function saveState(trackerId, stateArray) {
+      localStorage.setItem(trackerId, JSON.stringify(stateArray));
+    }
+
+    // Load the saved state, or default all false if none saved yet
+    function loadState(trackerId) {
+      const data = localStorage.getItem(trackerId);
+      return data ? JSON.parse(data) : Array(CIRCLES_COUNT).fill(false);
+    }
+
+    // Create circles with saved fill state and toggle logic
+    function createCircles(containerId, count = CIRCLES_COUNT) {
       const container = document.getElementById(containerId);
+      container.innerHTML = ''; // clear container
+      const state = loadState(containerId);
+
       for (let i = 0; i < count; i++) {
         const circle = document.createElement('div');
         circle.classList.add('circle');
+        if (state[i]) circle.classList.add('filled');
+
         circle.addEventListener('click', () => {
           circle.classList.toggle('filled');
+          state[i] = circle.classList.contains('filled');
+          saveState(containerId, state);
         });
+
         container.appendChild(circle);
       }
     }
 
-    createCircles('videos-tracker');
-    createCircles('concepts-tracker');
-    createCircles('projects-tracker');
+    // Initialize all trackers
+    trackers.forEach(id => createCircles(id));
   </script>
+
 </body>
 
 </html>
