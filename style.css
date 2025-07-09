@@ -2,19 +2,27 @@ body {
   margin: 0;
   background-color: #fffde7;
   font-family: "Sour Gummy", sans-serif;
+}
+
+/* Grid layout applies to this container */
+.container {
   display: grid;
-  grid-template-columns: 200px 1fr; /* sidebar + main content */
+  grid-template-columns: 200px 1fr;
   min-height: 100vh;
 }
 
+/* Sidebar */
 #sidebar {
   background-color: #f0edcb;
   padding: 20px;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 #sidebar ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 #sidebar li {
@@ -25,8 +33,10 @@ body {
   text-decoration: none;
   color: #333;
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
+/* Main content */
 main {
   padding: 40px;
   text-align: center;
